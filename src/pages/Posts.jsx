@@ -7,13 +7,13 @@ import {
 import { Link } from 'react-router-dom';
 
 import usePhotos from '../hooks/usePhotos';
-import useGiffys from '../hooks/useGiffys';
+import { useState } from 'react';
 
 const StyledPosts = styled.div`
   article {
-    border-radius: 6px;
-    background: #35858b;
-    box-shadow: inset 5px 5px 35px #153538, inset -5px -5px 35px #55d5de;
+    border-radius: 7px;
+    background: #515f6f;
+    box-shadow: inset -5px -5px 10px #22282f, inset 5px 5px 10px #8096af;
     margin: 1rem 0;
   }
   .headerPost {
@@ -35,7 +35,7 @@ const StyledPosts = styled.div`
     }
   }
   .containerPost {
-    padding: 0 0.5rem;
+    padding: 0 0.8rem;
     img {
       width: 100%;
       object-fit: cover;

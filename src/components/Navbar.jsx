@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { VscHome, VscSearch } from 'react-icons/vsc';
-import { MdVideoCameraFront } from 'react-icons/md';
-import { CgProfile } from 'react-icons/cg';
+import { MdVideoCameraFront, MdGif } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 //styled navbar
 const StyledNav = styled.nav`
@@ -26,11 +25,16 @@ const StyledNav = styled.nav`
       }
     }
     .cardNav {
-      border-radius: 0.7rem;
-      background: #4fbdba;
-      box-shadow: inset -20px 20px 25px #337b79, inset 20px -20px 25px #6bfffb;
+      border-radius: 8px;
+      background: linear-gradient(315deg, #4d5968, #5c6a7b);
+      box-shadow: -5px -5px 9px #22282e, 5px 5px 9px #8a9eb8;
       padding: 0.6rem;
     }
+  }
+  .active {
+    border-radius: 0.7rem;
+    background: #4fbdba;
+    box-shadow: inset -20px 20px 25px #337b79, inset 20px -20px 25px #6bfffb;
   }
 `;
 
@@ -50,16 +54,15 @@ const Navbar = () => {
           <li>
             <div className="cardNav">
               <Link to="/giffy">
-              <MdVideoCameraFront />
-
+                <MdGif />
               </Link>
             </div>
           </li>
-          <li>
-            <div className="cardNav">
+          {/* <li> */}
+          {/* <div className="cardNav">
               <CgProfile />
             </div>
-          </li>
+          </li> */}
           <li>
             <div className="cardNav">
               <VscSearch />
