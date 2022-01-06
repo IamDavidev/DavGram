@@ -63,8 +63,6 @@ box-shadow: inset 10px 10px 27px #303943,
     h2 {
       padding: 0.3rem 1rem;
       border-radius: 1rem;
-      /* background: linear-gradient(145deg, #55cac7, #47aaa7);
-      box-shadow: 20px 20px 67px #204c4a, -20px -20px 67px #7effff; */
     }
     a {
       color: #ff0000;
@@ -98,14 +96,13 @@ box-shadow: inset -5px -5px 10px #22282f,
 const Profile = () => {
   const { user } = useParams();
   const data = useUser({ user: user });
-  console.log(data);
   return (
     <StyledUser>
       {
         <>
           <div className="userPhoto">
             {data.profile_image && (
-              <img src={data.profile_image.large} alt="" />
+              <img src={data.profile_image.medium} alt="" />
             )}
             <h1>{user}</h1>
             <p>{data.bio}</p>
@@ -125,12 +122,14 @@ const Profile = () => {
             </div>
           </div>
           <div className="info">
-            <h2>
-              portfolio
-              <a href={data.portfolio_url} tarjet="_blank">
-                <BsLink />
-              </a>
-            </h2>
+            {data.portfolio_url ? (
+              <h2>
+                portfolio
+                <a href={data.portfolio_url} tarjet="_blank">
+                  <BsLink />
+                </a>
+              </h2>
+            ) : null}
           </div>
           <div className="renderPhotos">
             {data.photos &&

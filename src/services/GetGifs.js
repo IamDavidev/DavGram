@@ -5,8 +5,20 @@ const GetGifs = async () => {
     `https://api.giphy.com/v1/gifs/trending?limit=15&api_key=shM3obwOZz45bCiiBEjvjq9a5kagrzqR`
   )
     .then((res) => res.json())
-    .then((json) => json.data);
-  console.log(response);
+    .then((json) => {
+      const { data } = json;
+      const dataGifs = data.map((gif) => {
+        const { url } = gif.images.downsized_medium;
+        const { id, title } = gif;
+        return {
+          url,
+          id,
+          title,
+        };
+      });
+      return dataGifs;
+    });
+  response;
   return response;
 };
 

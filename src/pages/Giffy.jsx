@@ -31,14 +31,12 @@ const Giffy = () => {
       {data &&
         data.map((gif) => {
           return (
-            <>
-              <div className="renderGifs">
+              <div className="renderGifs" key={gif.id}>
                 <picture>
-                  <img src={gif.images.original.url} alt="gif" />
+                  <img src={gif.url} alt="gif" />
                   <h4>{gif.title}</h4>
                 </picture>
               </div>
-            </>
           );
         })}
     </StyledGifs>
