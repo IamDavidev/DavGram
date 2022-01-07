@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Giffy from './pages/Giffy';
 import Profile from './pages/Profile';
+import Search from './pages/Search';
 
 const StyledApp = styled.div`
   background: linear-gradient(45deg, #4d5968, #5c6a7b);
@@ -28,9 +29,10 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Posts data={data} />} />
-          <Route path="/user/:user" element={<Profile />} />
-          <Route path="/giffy" element={<Giffy />} />
-        </Routes>
+          <Route path="/user/:user/" element={<Profile />} />
+          <Route path="/giffy/" element={<Giffy />} />
+          <Route path="/explore" element={<Search />} />
+        </Routes> 
       </BrowserRouter>
     </StyledApp>
   );

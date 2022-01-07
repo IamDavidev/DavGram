@@ -5,9 +5,10 @@ import {
   AiOutlineShareAlt,
 } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 import usePhotos from '../hooks/usePhotos';
-import { useState } from 'react';
+import LoadMore from '../utils/LoadMore';
 
 const StyledPosts = styled.div`
   article {
@@ -71,10 +72,22 @@ const StyledPosts = styled.div`
       font-size: 0.8rem;
     }
   }
+  footer {
+    button {
+      padding: 1rem;
+      border-radius: 18px;
+      background: #0e9fb7;
+      border: none;
+    }
+  }
 `;
 
 const Posts = () => {
-  const data = usePhotos({});
+  const [limit, setLimit] = useState(5);
+  const data = usePhotos({ limit: limit });
+  const HandleLoadMore = () => {
+    setLimit(limit + 5);
+  };
   return (
     <>
       <h1>Posts</h1>
@@ -102,7 +115,7 @@ const Posts = () => {
                   <AiOutlineShareAlt />
                 </button>
               </div>
-              <div className="footerPost">
+              <div className="footerPost" id="RenderImage">
                 <p>
                   <span>{i.likes} </span>
                   likes
@@ -113,9 +126,16 @@ const Posts = () => {
             </article>
           );
         })}
+        <footer className="loadMore">
+          <button onClick={HandleLoadMore}>
+            <span>view more</span>
+          </button>
+        </footer>
       </StyledPosts>
     </>
   );
 };
 
 export default Posts;
+
+//

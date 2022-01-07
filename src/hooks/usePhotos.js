@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import GetPhotos from '../services/GetPhotos';
 
-const usePhotos = ({ page = 15 }) => {
+const usePhotos = ({ limit }) => {
   const [phots, setPhots] = useState([]);
   useEffect(() => {
-    GetPhotos({ page }).then((photo) => {
+    GetPhotos({ limit: limit }).then((photo) => {
       setPhots(photo);
     });
-  }, [page]);
+  }, [limit]);
+
   return phots;
 };
 

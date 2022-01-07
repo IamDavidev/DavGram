@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { VscHome, VscSearch } from 'react-icons/vsc';
-import { MdVideoCameraFront, MdGif } from 'react-icons/md';
+import { MdVideoCameraFront, MdGif, MdExplore } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 //styled navbar
 const StyledNav = styled.nav`
-  .acces {
+  .linksNav {
     ul {
       display: flex;
       justify-content: space-around;
@@ -42,7 +42,7 @@ const StyledNav = styled.nav`
 const Navbar = () => {
   return (
     <StyledNav>
-      <div className="acces">
+      <div className="linksNav">
         <ul>
           <li>
             <div className="cardNav">
@@ -65,7 +65,9 @@ const Navbar = () => {
           </li> */}
           <li>
             <div className="cardNav">
-              <VscSearch />
+              <Link to='/explore/'>
+              <MdExplore />
+              </Link>
             </div>
           </li>
         </ul>

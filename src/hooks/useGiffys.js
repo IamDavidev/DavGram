@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import GetGifs from '../services/GetGifs';
-const useGiffys = ({page = 1}) => {
+const useGiffys = ({ limit }) => {
   const [giffs, SetGiffs] = useState([]);
   useEffect(() => {
-    GetGifs().then((giffy) => {
+    GetGifs({ limit: limit }).then((giffy) => {
       SetGiffs(giffy);
     });
-  },[page]);
+  }, [limit]);
   return giffs;
 };
 
