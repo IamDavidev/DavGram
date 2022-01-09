@@ -88,6 +88,7 @@ const Posts = () => {
   const HandleLoadMore = () => {
     setLimit(limit + 5);
   };
+  console.log(limit);
   return (
     <>
       <h1>Posts</h1>

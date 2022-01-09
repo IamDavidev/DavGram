@@ -8,7 +8,7 @@ const usePhotos = ({ limit }) => {
       setPhots(photo);
     });
   }, [limit]);
-
+  console.log(limit)
   return phots;
 };
 

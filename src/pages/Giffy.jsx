@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { useState } from 'react';
 
 const StyledGifs = styled.div`
-  min-height: 100vh;
-  height: 100vh;
   .renderGifs {
     border-radius: 7px;
     background: #515f6f;
