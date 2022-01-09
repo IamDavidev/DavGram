@@ -18,7 +18,6 @@ const GetGifs = async ({limit}) => {
       });
       return dataGifs;
     });
-  response;
   return response;
 };
 

@@ -12,7 +12,8 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.2.1",
     "react-tiny-virtual-list": "^2.2.0",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "swiper": "^7.4.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",

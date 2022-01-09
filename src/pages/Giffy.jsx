@@ -34,11 +34,9 @@ const StyledGifs = styled.div`
 const Giffy = () => {
   const [limit, setLimit] = useState(10);
   const data = useGiffys({ limit: limit });
-
   const HandleLoadMore = () => {
     setLimit(limit + 10);
   };
-
   return (
     <StyledGifs>
       <h1>Giffy</h1>

@@ -1,6 +1,17 @@
 import { useEffect, useState } from 'react';
 import useSearch from '../hooks/useSearch';
 import useTrendingPhotos from '../hooks/useTrendingPhotos';
+import styled from 'styled-components';
+import SwiperTrending from '../Containers/SwiperTrending';
+import CardPost from '../components/CardPost';
+
+const StyledSearch = styled.div`
+  min-height: 100vh;
+  height: 100%;
+  form {
+    margin-top: 300px;
+  }
+`;
 
 const Search = () => {
   const [search, setSearch] = useState('');
@@ -9,13 +20,15 @@ const Search = () => {
   const HandleSearch = (evt) => {
     evt.preventDefault();
     const value = evt.target[0].value;
-    console.log('[value] :', value);
     setSearch(value);
   };
+  console.log(dataSearch);
   return (
-    <>
+    <StyledSearch>
       <h1>expolore</h1>
-
+      <div className="trendingRandom">
+        <SwiperTrending />
+      </div>
       <form onSubmit={HandleSearch}>
         <label>
           search : <input type="text" />
@@ -24,16 +37,13 @@ const Search = () => {
           <button type="submit">search</button>
         </label>
       </form>
-      <div className="renderTrending">
-        {dataTrending.map((item) => {
-          return (
-            <div className="" key={item.id}>
-              <img src={item.urls.regular} alt={item.alt_description} />
-            </div>
-          );
-        })}
+      <div className="renderSear">
+        {dataSearch.results &&
+          dataSearch.results.map((item) => {
+            return <CardPost i={item} />;
+          })}
       </div>
-    </>
+    </StyledSearch>
   );
 };
 
