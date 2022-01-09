@@ -1,4 +1,3 @@
-const API_KEY = 'shM3obwOZz45bCiiBEjvjq9a5kagrzqR';
 
 const GetGifs = async ({limit}) => {
   const response = await fetch(

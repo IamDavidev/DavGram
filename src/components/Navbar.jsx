@@ -4,6 +4,11 @@ import { MdVideoCameraFront, MdGif, MdExplore } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 //styled navbar
 const StyledNav = styled.nav`
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  padding: 0.5rem 0;
+  background: linear-gradient(45deg, #4d5968, #5c6a7b);
   .linksNav {
     ul {
       display: flex;
@@ -25,9 +30,10 @@ const StyledNav = styled.nav`
       }
     }
     .cardNav {
-      border-radius: 8px;
-      background: linear-gradient(315deg, #4d5968, #5c6a7b);
-      box-shadow: -5px -5px 9px #22282e, 5px 5px 9px #8a9eb8;
+      border-radius: 1rem;
+background: #586779;
+box-shadow: inset -20px 20px 69px #3e4956,
+            inset 20px -20px 69px #72859c;
       padding: 0.6rem;
     }
   }
@@ -65,8 +71,8 @@ const Navbar = () => {
           </li> */}
           <li>
             <div className="cardNav">
-              <Link to='/explore/'>
-              <MdExplore />
+              <Link to="/explore/">
+                <MdExplore />
               </Link>
             </div>
           </li>

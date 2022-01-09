@@ -1,38 +1,34 @@
-import styled from 'styled-components';
-import {
-  AiFillLike,
-  AiOutlineComment,
-  AiOutlineShareAlt,
-} from 'react-icons/ai';
-import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
+import styled from 'styled-components';
 import usePhotos from '../hooks/usePhotos';
-import LoadMore from '../utils/LoadMore';
+
+import Loading from '../components/Loading';
 import CardPost from '../components/CardPost';
 
 const StyledPosts = styled.div`
   footer {
     button {
-      padding: 1rem;
-      border-radius: 18px;
-      background: #0e9fb7;
+      background: #0c0c0c;
       border: none;
-    }
+      border-radius: .8rem;
+      padding: .8rem;
+      color:#0ff; 
+    } 
   }
 `;
 
 const Posts = () => {
   const [limit, setLimit] = useState(5);
-  const data = usePhotos({ limit: limit });
+  const { data, loading } = usePhotos({ limit: limit });
   const HandleLoadMore = () => {
     setLimit(limit + 5);
   };
-  limit;
+
   return (
     <>
       <h1>Posts</h1>
       <StyledPosts>
+        {loading && <Loading />}
         {data.map((i) => {
           return <CardPost i={i} key={i.id} />;
         })}
@@ -47,5 +43,3 @@ const Posts = () => {
 };
 
 export default Posts;
-
-//

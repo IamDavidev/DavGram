@@ -17,6 +17,10 @@ const StyledApp = styled.div`
     border: 2px solid #131b26;
     border-radius: 0.5rem;
   }
+  main{
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
 `;
 
 //render the app
@@ -24,17 +28,21 @@ const App = () => {
   const data = usePhotos({});
   data;
   return (
-    <StyledApp>
+    <>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Posts data={data} />} />
-          <Route path="/user/:user/" element={<Profile />} />
-          <Route path="/giffy/" element={<Giffy />} />
-          <Route path="/explore" element={<Search />} />
-        </Routes> 
+        <StyledApp>
+          <main>
+            <Routes>
+              <Route path="/" element={<Posts data={data} />} />
+              <Route path="/user/:user/" element={<Profile />} />
+              <Route path="/giffy/" element={<Giffy />} />
+              <Route path="/explore" element={<Search />} />
+            </Routes>
+          </main>
+        </StyledApp>
       </BrowserRouter>
-    </StyledApp>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import useGiffys from '../hooks/useGiffys';
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const StyledGifs = styled.div`
   .renderGifs {
@@ -34,9 +34,11 @@ const StyledGifs = styled.div`
 const Giffy = () => {
   const [limit, setLimit] = useState(10);
   const data = useGiffys({ limit: limit });
+
   const HandleLoadMore = () => {
     setLimit(limit + 10);
   };
+
   return (
     <StyledGifs>
       <h1>Giffy</h1>

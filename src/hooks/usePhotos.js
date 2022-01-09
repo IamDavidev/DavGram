@@ -2,13 +2,17 @@ import { useState, useEffect } from 'react';
 import GetPhotos from '../services/GetPhotos';
 
 const usePhotos = ({ limit }) => {
-  const [phots, setPhots] = useState([]);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     GetPhotos({ limit: limit }).then((photo) => {
-      setPhots(photo);
+      setData(photo);
     });
+    setLoading(false);
   }, [limit]);
-  return phots;
+  if (data) {
+    return { data, loading };
+  }
 };
 
 export default usePhotos;

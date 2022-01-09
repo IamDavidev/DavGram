@@ -43,7 +43,6 @@ const StyledTrending = styled.div`
 
 const SwiperTrending = () => {
   const dataTrending = useTrendingPhotos();
-  console.log(dataTrending);
   return (
     <StyledTrending>
       <Swiper
@@ -60,11 +59,10 @@ const SwiperTrending = () => {
       >
         {dataTrending.map((item) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={item.id}>
               <img
                 src={item.urls.regular}
                 alt="itsdavdev giff trendign urls "
-                key={item.id}
               />
             </SwiperSlide>
           );

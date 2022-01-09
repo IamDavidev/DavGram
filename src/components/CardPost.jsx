@@ -5,6 +5,7 @@ import {
   AiOutlineShareAlt,
 } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import Loading from './Loading';
 const StyledPosts = styled.div`
   article {
     border-radius: 7px;
@@ -70,10 +71,9 @@ const StyledPosts = styled.div`
   }
 `;
 const CardPost = ({ i }) => {
-  console.log(i);
   return (
     <StyledPosts>
-      {i && (
+      {i ? (
         <article key={i.id}>
           <div className="headerPost">
             <img src={i.user.profile_image.small} alt="" />
@@ -104,6 +104,8 @@ const CardPost = ({ i }) => {
             <time></time>
           </div>
         </article>
+      ) : (
+        <Loading />
       )}
     </StyledPosts>
   );

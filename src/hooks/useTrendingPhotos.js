@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Search from '../pages/search';
-import GetTrendingGifs from '../services/GetTrendingGifs';
+import {GetTrendingPhotos} from '../services/GetTrendingphotos';
 
 const useTrendingPhotos = () => {
   const [trending, setTrending] = useState([]);
-
   useEffect(() => {
-    GetTrendingGifs().then((res) => {
+    GetTrendingPhotos().then((res) => {
       setTrending(res);
     });
   },[Search]);
