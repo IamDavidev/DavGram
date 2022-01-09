@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import useUser from '../hooks/useUser';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { BsLink } from 'react-icons/bs';
 //BsLink45Degrees
 const StyledUser = styled.article`
@@ -102,7 +102,7 @@ const Profile = () => {
         <>
           <div className="userPhoto">
             {data.profile_image && (
-              <img src={data.profile_image.medium} alt="" />
+              <img src={data.profile_image.large} alt="" />
             )}
             <h1>{user}</h1>
             <p>{data.bio}</p>

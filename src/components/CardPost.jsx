@@ -6,6 +6,8 @@ import {
 } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
+
+
 const StyledPosts = styled.div`
   article {
     border-radius: 7px;
@@ -70,6 +72,8 @@ const StyledPosts = styled.div`
     }
   }
 `;
+
+
 const CardPost = ({ i }) => {
   return (
     <StyledPosts>

@@ -7,3 +7,4 @@
 --> lazy components 
 
 --> swr
+--> picture con height para matener el espacio de un imagen 

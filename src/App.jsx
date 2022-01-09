@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import usePhotos from './hooks/usePhotos';
 import styled from 'styled-components';
 import Posts from './pages/Posts';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Giffy from './pages/Giffy';
 import Profile from './pages/Profile';
@@ -21,6 +21,9 @@ const StyledApp = styled.div`
     margin: 0 auto;
     margin-top: 3rem;
   }
+  h1{
+    color:#000;
+  }
 `;
 
 //render the app
@@ -34,6 +37,7 @@ const App = () => {
         <StyledApp>
           <main>
             <Routes>
+              <Route path="*" element={<Navigate to ="/explore" />} />
               <Route path="/" element={<Posts data={data} />} />
               <Route path="/user/:user/" element={<Profile />} />
               <Route path="/giffy/" element={<Giffy />} />

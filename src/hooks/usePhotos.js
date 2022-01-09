@@ -1,18 +1,13 @@
-import { useState, useEffect } from 'react';
-import GetPhotos from '../services/GetPhotos';
+import useSWR from 'swr';
+import { fetcherPhotos } from '../utils/Fetchers';
 
-const usePhotos = ({ limit }) => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    GetPhotos({ limit: limit }).then((photo) => {
-      setData(photo);
-    });
-    setLoading(false);
-  }, [limit]);
-  if (data) {
-    return { data, loading };
-  }
+const usePhotos = ({ limit = 15 }) => {
+  const { data, error } = useSWR(
+    `https://api.unsplash.com/photos/?per_page=${limit}&client_id=E7tdtB2AMzvzRrM9QO37LvN5Xf-5A77tJhmL8xC5eOE`,
+    fetcherPhotos
+  );
+  if (!data) return [];
+  return data;
 };
 
 export default usePhotos;

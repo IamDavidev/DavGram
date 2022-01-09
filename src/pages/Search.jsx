@@ -10,27 +10,35 @@ const StyledSearch = styled.div`
   height: 100%;
   form {
     margin-top: 300px;
-    
+
     label {
-      display:flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       input {
         border-radius: 1rem;
-        border:none;
+        border: none;
         padding: 0.5rem;
         width: 80%;
-        background:none;
+        background: none;
         outline: none;
         font-size: 1.2rem;
         color: #170055;
         border-bottom: 1px solid #170055;
-        :focus{
-          outline:none;
+        :focus {
+          outline: none;
         }
-        ::placeholder{
-          font-weight:bold
+        ::placeholder {
+          font-weight: bold;
         }
+      }
+      button {
+        margin: 1rem 0;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #000000; 
+        padding: 0.8rem;
+        color: #0ff;
       }
     }
   }
@@ -53,7 +61,7 @@ const Search = () => {
       </div>
       <form onSubmit={HandleSearch}>
         <label>
-           <input type="text" placeholder='search Photos'/>
+          <input type="text" placeholder="search Photos" />
         </label>
         <label>
           <button type="submit">search</button>

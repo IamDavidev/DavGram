@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react';
-import GetGifs from '../services/GetGifs';
+
+
+import useSWR from 'swr';
+
 const useGiffys = ({ limit = 10 }) => {
-  const [giffs, SetGiffs] = useState([]);
-  useEffect(() => {
-    GetGifs({ limit: limit }).then((giffy) => {
-      SetGiffs(giffy);
-    });
-  }, [limit]);
-  return giffs;
+  const {} = useSWR()
 };
 
 export default useGiffys;

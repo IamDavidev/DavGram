@@ -23,10 +23,12 @@ const StyledGifs = styled.div`
 
   .loadMore {
     button {
-      padding: 0.6rem;
-      border-radius: 18px;
-      background: #0fafc9;
-      border: none;
+      margin: 1rem 0;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #000000; 
+        padding: 0.8rem;
+        color: #0ff;
     }
   }
 `;
