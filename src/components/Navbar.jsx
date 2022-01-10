@@ -9,6 +9,7 @@ const StyledNav = styled.nav`
   width: 100%;
   padding: 0.5rem 0;
   background: linear-gradient(45deg, #4d5968, #5c6a7b);
+  z-index: 100;
   .linksNav {
     ul {
       display: flex;
@@ -22,9 +23,9 @@ const StyledNav = styled.nav`
         font-weight: bold;
         svg {
           font-size: 1.3rem;
-          color: #030303;
+          color: #0e0cb4;
           :hover {
-            color: #4fbdba;
+            color: #ff1e00;
           }
         }
       }
@@ -37,10 +38,24 @@ const StyledNav = styled.nav`
     }
   }
   .active {
-    border-radius: 0.7rem;
-    color:#0ff;
+    color:#ff0000;
   }
-`;
+  @media (min-width: 758px)  {
+    .linksNav {
+      ul {
+        li{
+          padding:0;
+          svg{
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    .cardNav {
+      padding:0;
+    }
+  }
+    `;
 
 //reder the navbar CgProfile
 const Navbar = () => {

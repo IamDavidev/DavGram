@@ -18,6 +18,7 @@ const StyledGifs = styled.div`
       object-fit: cover;
       z-index: 1;
       border-radius: 1rem;
+      object-fit: cover;
     }
   }
   .loadMore {
@@ -30,20 +31,58 @@ const StyledGifs = styled.div`
       color: #0ff;
     }
   }
-  @media (min-width: 758px) and (max-width: 1024px) {
+  @media (min-width: 758px) and (max-width: 992px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     .renderGifs {
-      margin: 1rem 4rem;
+      margin: 1rem 3rem;
+    }
+    img {
+      max-height: 300px;
+    }
+    .loadMore {
+      grid-column: 1/3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
     }
   }
-  @media(min-width: 1024px) {
+  h1 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     .renderGifs {
-      margin: 2rem 12rem;
+      margin: 1rem 5rem;
+    }
+    img {
+      max-height: 300px;
+    }
+    .loadMore {
+      grid-column: 1/3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
     }
   }
 `;
 
 const Giffy = () => {
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(20);
   const data = useGiffys({ limit: limit });
   const [gifs, setGifs] = useState(data);
   const HandleLoadMore = () => {

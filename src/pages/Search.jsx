@@ -41,6 +41,23 @@ const StyledSearch = styled.div`
       }
     }
   }
+  @media (min-width: 758px) and (max-width: 1024px) {
+    .renderSearch {
+      margin: 0 6rem;
+    }
+    form{
+      button{
+        margin: 1rem 0;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    .renderSearch {
+      margin: 0 10rem;
+    }
+    
+  }
 `;
 
 const Search = () => {
@@ -66,10 +83,10 @@ const Search = () => {
           <button type="submit">search</button>
         </label>
       </form>
-      <div className="renderSear">
+      <div className="renderSearch">
         {dataSearch.results &&
           dataSearch.results.map((item) => {
-            return <CardPost i={item} />;
+            return <CardPost i={item} key={item.div}/>;
           })}
       </div>
     </StyledSearch>

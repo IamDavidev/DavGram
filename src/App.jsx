@@ -19,10 +19,11 @@ const StyledApp = styled.div`
   }
   main {
     margin: 0 auto;
-    margin-top: 3rem;
+    margin-top: 3.5rem;
   }
   h1 {
-    color: #000;
+    color: #0e0cb4;
+    text-align:center
   }
 `;
 

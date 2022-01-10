@@ -71,9 +71,8 @@ const StyledPosts = styled.div`
     }
   }
   @media (min-width: 768px) and(max-width: 1023px) {
-    article {
-      margin: 2rem 5rem;
-    }
+    margin: 2rem 6rem;
+
     .acces {
       button {
         svg {
@@ -88,23 +87,19 @@ const StyledPosts = styled.div`
     }
   }
   @media (min-width: 1024px) {
-    article {
-      margin: 2rem 14rem;
-    }
     .acces {
       button {
         svg {
           font-size: 2rem;
         }
       }
-      
     }
-    .footerPost{
-      p{
+    .footerPost {
+      p {
         font-size: 1.3rem;
       }
     }
-}
+  }
 `;
 
 const CardPost = ({ i }) => {

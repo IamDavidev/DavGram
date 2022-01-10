@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import CardPost from '../components/CardPost';
+import CardTrending from '../components/CardTrending';
 import usePhotos from '../hooks/usePhotos';
 
 const StyledPosts = styled.div`
@@ -14,8 +15,38 @@ const StyledPosts = styled.div`
       color: #0ff;
     }
   }
+  .suggestions{
+    position:fixed;
+    bottom:0;
+    left:0;    
+  }
+  @media (min-width: 758px) and (max-width: 1024px) {
+    .renderPhotosPost{
+      margin: 0 6rem;
+    }
+    .suggestion:{
+      position:fixed;
+    }
+  }
   @media (min-width: 1024px) {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
     .renderPhotosPost {
+      margin:0 8rem;
+      grid-column:1/3;
+      padding:1rem;
+    }
+    footer{
+      grid-column:1/3
+    }
+    .suggestions{
+      position:relative;
+      h1{
+        text-align:center;
+      }
+      .suggestionsCard{
+        margin:0 3rem;
+      }
     }
   }
 `;
@@ -37,6 +68,9 @@ const Posts = () => {
             photos.map((i) => {
               return <CardPost i={i} key={i.id} />;
             })}
+        </div>
+        <div className="suggestions">
+          <CardTrending />
         </div>
         <footer className="loadMore">
           <button onClick={HandleLoadMore}>
