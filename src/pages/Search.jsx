@@ -41,22 +41,68 @@ const StyledSearch = styled.div`
       }
     }
   }
+  .cardSearch {
+    margin: 0 3rem;
+  }
   @media (min-width: 758px) and (max-width: 1024px) {
     .renderSearch {
       margin: 0 6rem;
     }
-    form{
-      button{
+    form {
+      button {
         margin: 1rem 0;
         font-size: 1.5rem;
       }
+    }
+    img {
+      object-fit: cover;
     }
   }
   @media (min-width: 1024px) {
     .renderSearch {
       margin: 0 10rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
-    
+    img {
+      object-fit: cover;
+      max-height: 300px;
+    }
+    form {
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input {
+          border-radius: 1rem;
+          border: none;
+          padding: 0.5rem;
+          width: 40%;
+          background: none;
+          outline: none;
+          font-size: 1.5rem;
+          color: #0c0264;
+          text-align: center;
+          text-transform: uppercase;
+          border-bottom: 2px solid #000000;
+          :focus {
+            outline: none;
+          }
+          ::placeholder {
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+        button {
+          font-size: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+        }
+      }
+    }
+    .cardSearch {
+      margin: 0 3rem;
+    }
   }
 `;
 
@@ -86,7 +132,11 @@ const Search = () => {
       <div className="renderSearch">
         {dataSearch.results &&
           dataSearch.results.map((item) => {
-            return <CardPost i={item} key={item.div}/>;
+            return (
+              <div className="cardSearch">
+                <CardPost i={item} key={item.div} />
+              </div>
+            );
           })}
       </div>
     </StyledSearch>

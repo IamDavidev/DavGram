@@ -72,7 +72,6 @@ const StyledPosts = styled.div`
   }
   @media (min-width: 768px) and(max-width: 1023px) {
     margin: 2rem 6rem;
-
     .acces {
       button {
         svg {

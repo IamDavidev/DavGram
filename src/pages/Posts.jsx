@@ -15,37 +15,49 @@ const StyledPosts = styled.div`
       color: #0ff;
     }
   }
-  .suggestions{
-    position:fixed;
-    bottom:0;
-    left:0;    
+  .suggestions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
   }
   @media (min-width: 758px) and (max-width: 1024px) {
-    .renderPhotosPost{
+    .renderPhotosPost {
       margin: 0 6rem;
     }
-    .suggestion:{
-      position:fixed;
+    .suggestion: {
+      position: fixed;
     }
   }
   @media (min-width: 1024px) {
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     .renderPhotosPost {
-      margin:0 8rem;
-      grid-column:1/3;
-      padding:1rem;
+      margin: 0 8rem;
+      grid-column: 1/3;
+      padding: 1rem;
     }
-    footer{
-      grid-column:1/3
+    footer {
+      grid-column: 1/3;
     }
-    .suggestions{
-      position:relative;
-      h1{
-        text-align:center;
+    .suggestions {
+      position: relative;
+      h1 {
+        text-align: center;
       }
-      .suggestionsCard{
-        margin:0 3rem;
+      .suggestionsCard {
+        margin: 0 3rem;
+      }
+    }
+    .loadMore {
+      grid-column: 1/3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
       }
     }
   }
