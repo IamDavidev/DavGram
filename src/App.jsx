@@ -17,12 +17,12 @@ const StyledApp = styled.div`
     border: 2px solid #131b26;
     border-radius: 0.5rem;
   }
-  main{
+  main {
     margin: 0 auto;
     margin-top: 3rem;
   }
-  h1{
-    color:#000;
+  h1 {
+    color: #000;
   }
 `;
 
@@ -37,8 +37,8 @@ const App = () => {
         <StyledApp>
           <main>
             <Routes>
-              <Route path="*" element={<Navigate to ="/explore" />} />
-              <Route path="/" element={<Posts data={data} />} />
+              <Route path="*" element={<Navigate to="/explore" />} />
+              <Route path="/posts" element={<Posts data={data} />} />
               <Route path="/user/:user/" element={<Profile />} />
               <Route path="/giffy/" element={<Giffy />} />
               <Route path="/explore" element={<Search />} />

@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import useUser from '../hooks/useUser';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { BsLink } from 'react-icons/bs';
-//BsLink45Degrees
+
 const StyledUser = styled.article`
     color:#00f;
   .userPhoto {
@@ -136,7 +136,7 @@ const Profile = () => {
               data.photos.map((photo) => {
                 return (
                   <picture key={photo.urls.small} key={photo.urls.small}>
-                    <img src={photo.urls.full} alt="" />
+                    <img src={photo.urls.full} alt="itdavidev Davgram api unplash" />
                   </picture>
                 );
               })}

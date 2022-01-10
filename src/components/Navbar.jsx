@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { VscHome, VscSearch } from 'react-icons/vsc';
 import { MdVideoCameraFront, MdGif, MdExplore } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 //styled navbar
 const StyledNav = styled.nav`
   position: fixed;
@@ -31,16 +31,14 @@ const StyledNav = styled.nav`
     }
     .cardNav {
       border-radius: 1rem;
-background: #586779;
-box-shadow: inset -20px 20px 69px #3e4956,
-            inset 20px -20px 69px #72859c;
+      background: #586779;
+      box-shadow: inset -20px 20px 69px #3e4956, inset 20px -20px 69px #72859c;
       padding: 0.6rem;
     }
   }
   .active {
     border-radius: 0.7rem;
-    background: #4fbdba;
-    box-shadow: inset -20px 20px 25px #337b79, inset 20px -20px 25px #6bfffb;
+    color:#0ff;
   }
 `;
 
@@ -52,28 +50,23 @@ const Navbar = () => {
         <ul>
           <li>
             <div className="cardNav">
-              <Link to="/">
+              <NavLink to="/posts">
                 <VscHome />
-              </Link>
+              </NavLink>
             </div>
           </li>
           <li>
             <div className="cardNav">
-              <Link to="/giffy">
+              <NavLink to="/giffy">
                 <MdGif />
-              </Link>
+              </NavLink>
             </div>
           </li>
-          {/* <li> */}
-          {/* <div className="cardNav">
-              <CgProfile />
-            </div>
-          </li> */}
           <li>
             <div className="cardNav">
-              <Link to="/explore/">
+              <NavLink to="/explore/">
                 <MdExplore />
-              </Link>
+              </NavLink>
             </div>
           </li>
         </ul>

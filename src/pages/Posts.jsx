@@ -24,9 +24,6 @@ const Posts = () => {
     setLimit(limit + 5);
     setPhotos(data);
   };
-  setTimeout(() => {
-    setPhotos(data);
-  }, 1000);
   return (
     <>
       <h1>Posts</h1>

@@ -7,7 +7,6 @@ import {
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
 
-
 const StyledPosts = styled.div`
   article {
     border-radius: 7px;
@@ -73,7 +72,6 @@ const StyledPosts = styled.div`
   }
 `;
 
-
 const CardPost = ({ i }) => {
   return (
     <StyledPosts>
@@ -86,7 +84,7 @@ const CardPost = ({ i }) => {
             </Link>
           </div>
           <div className="containerPost">
-            <img src={i.urls.small} alt="" />
+            <img src={i.urls.small} alt="itsDavid DavGram " />
           </div>
           <div className="acces">
             <button>

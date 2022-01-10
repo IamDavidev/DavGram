@@ -24,11 +24,11 @@ const StyledGifs = styled.div`
   .loadMore {
     button {
       margin: 1rem 0;
-        background: none;
-        border: none;
-        border-bottom: 1px solid #000000; 
-        padding: 0.8rem;
-        color: #0ff;
+      background: none;
+      border: none;
+      border-bottom: 1px solid #000000;
+      padding: 0.8rem;
+      color: #0ff;
     }
   }
 `;
@@ -40,7 +40,6 @@ const Giffy = () => {
   const HandleLoadMore = () => {
     setLimit(limit + 10);
   };
-
   return (
     <StyledGifs>
       <h1>Giffy</h1>
@@ -49,7 +48,7 @@ const Giffy = () => {
           return (
             <div className="renderGifs" key={gif.id}>
               <picture>
-                <img src={gif.url} alt="gif" />
+                <img src={gif.url} alt="gif itsDavid Davgram" />
                 <h4>{gif.title}</h4>
               </picture>
             </div>
