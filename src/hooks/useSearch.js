@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Search from '../pages/search';
 import getSearchPhotos from '../services/getSearchPhotos';
 
 const useSearch = ({ title }) => {
