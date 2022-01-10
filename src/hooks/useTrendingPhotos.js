@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Search from '../pages/search';
 import {GetTrendingPhotos} from '../services/GetTrendingphotos';
 
 const useTrendingPhotos = () => {
