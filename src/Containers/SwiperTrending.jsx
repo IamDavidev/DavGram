@@ -15,6 +15,8 @@ import useTrendingPhotos from '../hooks/useTrendingPhotos';
 
 const StyledTrending = styled.div`
   padding: 1rem;
+  display: flex;
+
   .swiper {
     width: 300px;
     height: 300px;
@@ -25,7 +27,7 @@ const StyledTrending = styled.div`
     margin-top: -150px;
   }
   img {
-    width: 100%;
+    width: 425px;
     height: 100%;
     object-fit: cover;
     max-height: 204px;
@@ -38,6 +40,9 @@ const StyledTrending = styled.div`
   .swiper-slide img {
     display: block;
     width: 100%;
+  }
+  @media (max-width: 768px) {
+    
   }
 `;
 

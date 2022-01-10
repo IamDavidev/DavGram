@@ -20,7 +20,6 @@ const StyledGifs = styled.div`
       border-radius: 1rem;
     }
   }
-
   .loadMore {
     button {
       margin: 1rem 0;
@@ -31,20 +30,31 @@ const StyledGifs = styled.div`
       color: #0ff;
     }
   }
+  @media (min-width: 758px) and (max-width: 1024px) {
+    .renderGifs {
+      margin: 1rem 4rem;
+    }
+  }
+  @media(min-width: 1024px) {
+    .renderGifs {
+      margin: 2rem 12rem;
+    }
+  }
 `;
 
 const Giffy = () => {
   const [limit, setLimit] = useState(10);
   const data = useGiffys({ limit: limit });
-
+  const [gifs, setGifs] = useState(data);
   const HandleLoadMore = () => {
     setLimit(limit + 10);
+    setGifs(data);
   };
   return (
     <StyledGifs>
       <h1>Giffy</h1>
       {data &&
-        data.map((gif) => {
+        gifs.map((gif) => {
           return (
             <div className="renderGifs" key={gif.id}>
               <picture>

@@ -14,6 +14,10 @@ const StyledPosts = styled.div`
       color: #0ff;
     }
   }
+  @media (min-width: 1024px) {
+    .renderPhotosPost {
+    }
+  }
 `;
 
 const Posts = () => {
@@ -28,10 +32,12 @@ const Posts = () => {
     <>
       <h1>Posts</h1>
       <StyledPosts>
-        {photos &&
-          photos.map((i) => {
-            return <CardPost i={i} key={i.id} />;
-          })}
+        <div className="renderPhotosPost">
+          {photos &&
+            photos.map((i) => {
+              return <CardPost i={i} key={i.id} />;
+            })}
+        </div>
         <footer className="loadMore">
           <button onClick={HandleLoadMore}>
             <span>view more</span>

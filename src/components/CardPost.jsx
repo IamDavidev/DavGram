@@ -65,11 +65,46 @@ const StyledPosts = styled.div`
       margin-right: 0.3rem;
     }
     p {
-      margin: 0 0.3rem;
+      margin: 0.3rem;
       width: 100%;
       font-size: 0.8rem;
     }
   }
+  @media (min-width: 768px) and(max-width: 1023px) {
+    article {
+      margin: 2rem 5rem;
+    }
+    .acces {
+      button {
+        svg {
+          font-size: 1.7rem;
+        }
+      }
+    }
+    .footerPost {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    article {
+      margin: 2rem 14rem;
+    }
+    .acces {
+      button {
+        svg {
+          font-size: 2rem;
+        }
+      }
+      
+    }
+    .footerPost{
+      p{
+        font-size: 1.3rem;
+      }
+    }
+}
 `;
 
 const CardPost = ({ i }) => {

@@ -9,8 +9,7 @@ const StyledSearch = styled.div`
   min-height: 100vh;
   height: 100%;
   form {
-    margin-top: 300px;
-
+    margin-top: 400px;
     label {
       display: flex;
       align-items: center;
@@ -36,7 +35,7 @@ const StyledSearch = styled.div`
         margin: 1rem 0;
         background: none;
         border: none;
-        border-bottom: 1px solid #000000; 
+        border-bottom: 1px solid #000000;
         padding: 0.8rem;
         color: #0ff;
       }
