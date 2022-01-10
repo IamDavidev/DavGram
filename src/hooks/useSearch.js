@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import getSearchPhotos from '../services/getSearchPhotos';
+import getSearchPhotos from '../services/GetSearchPhotos';
 
 const useSearch = ({ title }) => {
   const [Search, setSearch] = useState([]);
