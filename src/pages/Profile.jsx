@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { BsLink } from 'react-icons/bs';
 
 const StyledUser = styled.article`
-    color:#00f;
+  color: #00f;
   .userPhoto {
     display: flex;
     flex-direction: column;
@@ -20,10 +20,10 @@ const StyledUser = styled.article`
     h1 {
       padding: 0.3rem 0;
       margin: 0;
-      color:#000;
-      font-weight:bold;
-      text-transform:uppercase;
-      letter-spacing:2px;
+      color: #000;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     p {
       padding: 0;
@@ -34,7 +34,7 @@ const StyledUser = styled.article`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     .data {
       display: flex;
       flex-direction: column;
@@ -42,16 +42,14 @@ const StyledUser = styled.article`
       padding: 0.8rem;
       margin: 0.5rem;
       border-radius: 1rem;
-  background: #515F6F;
-    box-shadow: inset -5px -5px 10px #22282f,
-            inset 5px 5px 10px #8096af;
+      background: #515f6f;
+      box-shadow: inset -5px -5px 10px #22282f, inset 5px 5px 10px #8096af;
       strong {
         color: #ff0000;
         padding: 0.7rem;
-        border-radius: .7rem;
-background: #586779;
-box-shadow: inset 10px 10px 27px #303943,
-            inset -10px -10px 27px #8095af;
+        border-radius: 0.7rem;
+        background: #586779;
+        box-shadow: inset 10px 10px 27px #303943, inset -10px -10px 27px #8095af;
       }
     }
   }
@@ -77,21 +75,31 @@ box-shadow: inset 10px 10px 27px #303943,
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     picture {
-      padding:1rem;
+      padding: 1rem;
       border-radius: 7px;
-background: #515F6F;
-box-shadow: inset -5px -5px 10px #22282f,
-            inset 5px 5px 10px #8096af;
-            margin:.3rem 1rem;
-      img{
+      background: #515f6f;
+      box-shadow: inset -5px -5px 10px #22282f, inset 5px 5px 10px #8096af;
+      margin: 0.3rem 1rem;
+      img {
         width: 100%;
-        margin:0;
+        margin: 0;
         object-fit: cover;
         border-radius: 1rem;
         border: 1px solid #1707ff;
       }
     }
-      `;
+  }
+  @media (min-width: 768px) {
+    .userPhoto {
+      margin: 1rem 15rem;
+    }
+  }
+  @media (min-width: 1025px) {
+    .userPhoto {
+      margin: 1rem 30rem;
+    }
+  }
+`;
 
 const Profile = () => {
   const { user } = useParams();
@@ -136,7 +144,10 @@ const Profile = () => {
               data.photos.map((photo) => {
                 return (
                   <picture key={photo.urls.small} key={photo.urls.small}>
-                    <img src={photo.urls.full} alt="itdavidev Davgram api unplash" />
+                    <img
+                      src={photo.urls.full}
+                      alt="itdavidev Davgram api unplash"
+                    />
                   </picture>
                 );
               })}

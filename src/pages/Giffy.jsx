@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 
 const StyledGifs = styled.div`
+  margin-top: 3rem;
   .renderGifs {
     border-radius: 7px;
     background: #515f6f;
@@ -60,15 +61,25 @@ const StyledGifs = styled.div`
   }
   @media (min-width: 992px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     .renderGifs {
-      margin: 1rem 5rem;
+      margin: 1rem 1rem;
+      padding: 0.4rem;
+    }
+    picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
     img {
-      max-height: 300px;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      margin:1rem;
     }
     .loadMore {
-      grid-column: 1/3;
+      grid-column: 1/4;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -90,24 +101,26 @@ const Giffy = () => {
     setGifs(data);
   };
   return (
-    <StyledGifs>
+    <>
       <h1>Giffy</h1>
-      {data &&
-        gifs.map((gif) => {
-          return (
-            <div className="renderGifs" key={gif.id}>
-              <picture>
-                <img src={gif.url} alt="gif itsDavid Davgram" />
-                <h4>{gif.title}</h4>
-              </picture>
-            </div>
-          );
-        })}
+      <StyledGifs>
+        {data &&
+          data.map((gif) => {
+            return (
+              <div className="renderGifs" key={gif.id}>
+                <picture>
+                  <img src={gif.url} alt="gif itsDavid Davgram" />
+                  <h4>{gif.title}</h4>
+                </picture>
+              </div>
+            );
+          })}
 
-      <footer className="loadMore">
-        <button onClick={HandleLoadMore}>load more</button>
-      </footer>
-    </StyledGifs>
+        <footer className="loadMore">
+          <button onClick={HandleLoadMore}>load more</button>
+        </footer>
+      </StyledGifs>
+    </>
   );
 };
 

@@ -9,7 +9,6 @@ const useTrendingPhotos = () => {
       setTrending(res);
     });
   }, [loading]);
-  console.log(trending);
 
   return trending;
 };

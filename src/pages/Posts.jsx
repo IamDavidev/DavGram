@@ -15,6 +15,9 @@ const StyledPosts = styled.div`
       color: #0ff;
     }
   }
+  picture{
+    min-width:300px
+  }
   .suggestions {
     position: fixed;
     bottom: 0;
@@ -24,7 +27,7 @@ const StyledPosts = styled.div`
     .renderPhotosPost {
       margin: 0 6rem;
     }
-    .suggestion: {
+    .suggestion{
       position: fixed;
     }
   }
@@ -76,8 +79,8 @@ const Posts = () => {
       <h1>Posts</h1>
       <StyledPosts>
         <div className="renderPhotosPost">
-          {photos &&
-            photos.map((i) => {
+          {data &&
+            data.map((i) => {
               return <CardPost i={i} key={i.id} />;
             })}
         </div>
